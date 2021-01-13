@@ -16,6 +16,7 @@ import {CodeInput, ProgressBar} from '../../components';
 const {height, width} = Dimensions.get('window');
 
 const VerifyEmail = () => {
+  const buttonColor =  Platform.OS === 'ios' ? 'white' : '#308C6A';
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -111,11 +112,11 @@ const VerifyEmail = () => {
                   console.log('next pressed');
                 }}
                 title="Next"
-                color="white"
+                color={buttonColor}
               />
             </View>
           </View>
-       </>
+        </>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
   );
@@ -126,22 +127,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     backgroundColor: '#F6F1EB',
-    // marginTop: 20
   },
   inner: {
     flex: 1,
     padding: 24,
     flexDirection: 'column',
   },
+  
   headerContainer: {
     position: 'absolute',
     top: 60,
     paddingHorizontal: 10,
     width: '100%',
-    // flex: 1,
-    // flexDirection: 'column',
-    // justifyContent: 'flex-start',
-    // paddingHorizontal: 10,
   },
   progressHeader: {
     flexDirection: 'row',
@@ -153,7 +150,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     paddingLeft: 20,
     paddingTop: 10,
-    width: width * 0.6
+    width: width * 0.6,
   },
   headerText: {
     fontFamily: 'Helvetica',
@@ -170,9 +167,8 @@ const styles = StyleSheet.create({
   codeInputContainer: {
     flexDirection: 'row',
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center'
-    // paddingTop: 200
+    paddingHorizontal: 44,
+    justifyContent: 'center',
   },
   buttonContainer: {
     width: 0.8 * width,
