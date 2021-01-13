@@ -21,7 +21,7 @@ const VerifyEmail = () => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View style={styles.container}>
+        <>
           <View style={styles.headerContainer}>
             <View style={styles.progressHeader}>
               <Icon
@@ -66,7 +66,7 @@ const VerifyEmail = () => {
           </View>
 
           <View style={styles.codeInputContainer}>
-            <CodeInput/>
+            <CodeInput />
           </View>
 
           <View>
@@ -115,7 +115,7 @@ const VerifyEmail = () => {
               />
             </View>
           </View>
-        </View>
+       </>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
   );
@@ -124,19 +124,24 @@ const VerifyEmail = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
+    backgroundColor: '#F6F1EB',
+    // marginTop: 20
   },
   inner: {
     flex: 1,
     padding: 24,
     flexDirection: 'column',
-    backgroundColor: '#F6F1EB',
   },
   headerContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
+    position: 'absolute',
+    top: 60,
     paddingHorizontal: 10,
+    width: '100%',
+    // flex: 1,
+    // flexDirection: 'column',
+    // justifyContent: 'flex-start',
+    // paddingHorizontal: 10,
   },
   progressHeader: {
     flexDirection: 'row',
@@ -146,7 +151,9 @@ const styles = StyleSheet.create({
   },
   headerTextContainer: {
     flexDirection: 'column',
-    paddingLeft: 10,
+    paddingLeft: 20,
+    paddingTop: 10,
+    width: width * 0.6
   },
   headerText: {
     fontFamily: 'Helvetica',
@@ -163,6 +170,9 @@ const styles = StyleSheet.create({
   codeInputContainer: {
     flexDirection: 'row',
     flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center'
+    // paddingTop: 200
   },
   buttonContainer: {
     width: 0.8 * width,
